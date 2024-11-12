@@ -148,9 +148,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // HomePage
   {
     'gygh22st': {
-      'en': 'example.info@example.com',
-      'es': 'ejemplo.info@ejemplo.com',
-      'pt': 'exemplo.info@exemplo.com',
+      'en': 'carlosrobertodevops@gmail.com',
+      'es': 'carlosrobertodevops@gmail.com',
+      'pt': 'carlosrobertodevops@gmail.com',
     },
     '5tvoxhfh': {
       'en': 'Copy',
@@ -173,9 +173,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'X',
     },
     '8i0n580c': {
-      'en': 'example.info@example.com',
-      'es': 'ejemplo.info@ejemplo.com',
-      'pt': 'exemplo.info@exemplo.com',
+      'en': 'carlosrobertodevops@gmail.com',
+      'es': 'carlosrobertodevops@gmail.com',
+      'pt': 'carlosrobertodevops@gmail.com',
     },
     '4wn4ovkl': {
       'en': 'Copy',
@@ -1127,7 +1127,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en':
           'Innovative Solutions in \nWeb & Mobile \nDevelopment for \nSeamless User Experiences',
       'es':
-          'Soluciones innovadoras en desarrollo \nweb y móvil para \nexperiencias de usuario perfectas',
+          'Soluciones innovadoras en desarrollo\nweb y móvil para experiencias de usuario\nperfectas',
       'pt':
           'Soluções inovadoras em \nDesenvolvimento \nWeb e Mobile para \nExperiências de usuário perfeitas',
     },
@@ -1175,7 +1175,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en':
           'full-stack developer specializing in web and mobile apps, focusing on intuitive design and innovative AI solutions',
       'es':
-          'Desarrollador full-stack especializado en aplicaciones web y móviles, centrado en diseño intuitivo y soluciones innovadoras de inteligencia artificial.',
+          'Desarrollador full-stack especializado en aplicaciones web y móviles, centrado en el diseño intuitivo y soluciones innovadoras de inteligencia artificial.',
       'pt':
           'desenvolvedor full-stack especializado em aplicativos web e móveis, com foco em design intuitivo e soluções inovadoras de IA',
     },
@@ -1236,9 +1236,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Aplicativo de saúde móvel',
     },
     'fjaeht1q': {
-      'en': 'June 2024',
-      'es': 'Junio de 2024',
-      'pt': 'Junho de 2024',
+      'en': 'November 2024',
+      'es': 'Novembro de 2024',
+      'pt': 'Novembro de 2024',
     },
     'q5kvocw3': {
       'en':
@@ -1259,9 +1259,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Desenvolvimento de comércio eletrônico',
     },
     '10io9was': {
-      'en': 'July 2024',
-      'es': 'Julio de 2024',
-      'pt': 'Julho de 2024',
+      'en': 'November 2024',
+      'es': 'Novembro de 2024',
+      'pt': 'Novembro de 2024',
     },
     'bp61qn36': {
       'en':

@@ -574,7 +574,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                     SelectionArea(
                                         child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'gygh22st' /* example.info@example.com */,
+                                        'gygh22st' /* carlosrobertodevops@gmail.com */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -760,7 +760,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           SelectionArea(
                                               child: Text(
                                             FFLocalizations.of(context).getText(
-                                              '8i0n580c' /* example.info@example.com */,
+                                              '8i0n580c' /* carlosrobertodevops@gmail.com */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -964,13 +964,13 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                         const AlignmentDirectional(
                                                             0.0, 0.0),
                                                     children: [
-                                                      const Align(
+                                                      Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 -0.9, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       6.0,
                                                                       0.0,
@@ -979,19 +979,28 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                           child: Icon(
                                                             Icons
                                                                 .wb_sunny_rounded,
-                                                            color: Color(
-                                                                0xFF57636C),
+                                                            color: Theme.of(
+                                                                            context)
+                                                                        .brightness ==
+                                                                    Brightness
+                                                                        .dark
+                                                                ? FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .accent4
+                                                                : FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .info,
                                                             size: 24.0,
                                                           ),
                                                         ),
                                                       ),
-                                                      const Align(
+                                                      Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 1.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -1000,8 +1009,17 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                           child: Icon(
                                                             Icons
                                                                 .mode_night_rounded,
-                                                            color: Color(
-                                                                0xFF57636C),
+                                                            color: Theme.of(
+                                                                            context)
+                                                                        .brightness ==
+                                                                    Brightness
+                                                                        .dark
+                                                                ? FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .accent4
+                                                                : FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .info,
                                                             size: 24.0,
                                                           ),
                                                         ),
@@ -10469,7 +10487,7 @@ Web dev... */
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                'fjaeht1q' /* June 2024 */,
+                                                                'fjaeht1q' /* November 2024 */,
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -10653,7 +10671,7 @@ Web dev... */
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                '10io9was' /* July 2024 */,
+                                                                '10io9was' /* November 2024 */,
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)

@@ -6,11 +6,13 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 const kThemeModeKey = '__theme_mode__';
+
 SharedPreferences? _prefs;
 
 abstract class FlutterFlowTheme {
   static Future initialize() async =>
       _prefs = await SharedPreferences.getInstance();
+
   static ThemeMode get themeMode {
     final darkMode = _prefs?.getBool(kThemeModeKey);
     return darkMode == null
@@ -182,106 +184,91 @@ class ThemeTypography extends Typography {
   final FlutterFlowTheme theme;
 
   String get displayLargeFamily => 'Open Sans';
-  TextStyle get displayLarge => GoogleFonts.getFont(
-        'Open Sans',
+  TextStyle get displayLarge => GoogleFonts.openSans(
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 57.0,
       );
   String get displayMediumFamily => 'Open Sans';
-  TextStyle get displayMedium => GoogleFonts.getFont(
-        'Open Sans',
+  TextStyle get displayMedium => GoogleFonts.openSans(
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 45.0,
       );
   String get displaySmallFamily => 'Open Sans';
-  TextStyle get displaySmall => GoogleFonts.getFont(
-        'Open Sans',
+  TextStyle get displaySmall => GoogleFonts.openSans(
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 36.0,
       );
   String get headlineLargeFamily => 'Open Sans';
-  TextStyle get headlineLarge => GoogleFonts.getFont(
-        'Open Sans',
+  TextStyle get headlineLarge => GoogleFonts.openSans(
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 32.0,
       );
   String get headlineMediumFamily => 'Open Sans';
-  TextStyle get headlineMedium => GoogleFonts.getFont(
-        'Open Sans',
+  TextStyle get headlineMedium => GoogleFonts.openSans(
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 32.0,
       );
   String get headlineSmallFamily => 'Open Sans';
-  TextStyle get headlineSmall => GoogleFonts.getFont(
-        'Open Sans',
+  TextStyle get headlineSmall => GoogleFonts.openSans(
         color: theme.primaryText,
         fontWeight: FontWeight.bold,
         fontSize: 24.0,
       );
   String get titleLargeFamily => 'Open Sans';
-  TextStyle get titleLarge => GoogleFonts.getFont(
-        'Open Sans',
+  TextStyle get titleLarge => GoogleFonts.openSans(
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 22.0,
       );
   String get titleMediumFamily => 'Open Sans';
-  TextStyle get titleMedium => GoogleFonts.getFont(
-        'Open Sans',
+  TextStyle get titleMedium => GoogleFonts.openSans(
         color: theme.info,
         fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
   String get titleSmallFamily => 'Open Sans';
-  TextStyle get titleSmall => GoogleFonts.getFont(
-        'Open Sans',
+  TextStyle get titleSmall => GoogleFonts.openSans(
         color: theme.info,
         fontWeight: FontWeight.w500,
         fontSize: 14.0,
       );
   String get labelLargeFamily => 'Open Sans';
-  TextStyle get labelLarge => GoogleFonts.getFont(
-        'Open Sans',
+  TextStyle get labelLarge => GoogleFonts.openSans(
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
   String get labelMediumFamily => 'Open Sans';
-  TextStyle get labelMedium => GoogleFonts.getFont(
-        'Open Sans',
+  TextStyle get labelMedium => GoogleFonts.openSans(
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
         fontSize: 14.0,
       );
   String get labelSmallFamily => 'Open Sans';
-  TextStyle get labelSmall => GoogleFonts.getFont(
-        'Open Sans',
+  TextStyle get labelSmall => GoogleFonts.openSans(
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
         fontSize: 12.0,
       );
   String get bodyLargeFamily => 'Open Sans';
-  TextStyle get bodyLarge => GoogleFonts.getFont(
-        'Open Sans',
+  TextStyle get bodyLarge => GoogleFonts.openSans(
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
   String get bodyMediumFamily => 'Open Sans';
-  TextStyle get bodyMedium => GoogleFonts.getFont(
-        'Open Sans',
+  TextStyle get bodyMedium => GoogleFonts.openSans(
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 14.0,
       );
   String get bodySmallFamily => 'Open Sans';
-  TextStyle get bodySmall => GoogleFonts.getFont(
-        'Open Sans',
+  TextStyle get bodySmall => GoogleFonts.openSans(
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 12.0,
@@ -316,38 +303,47 @@ class DarkModeTheme extends FlutterFlowTheme {
 
 extension TextStyleHelper on TextStyle {
   TextStyle override({
+    TextStyle? font,
     String? fontFamily,
     Color? color,
     double? fontSize,
     FontWeight? fontWeight,
     double? letterSpacing,
     FontStyle? fontStyle,
-    bool useGoogleFonts = true,
+    bool useGoogleFonts = false,
     TextDecoration? decoration,
     double? lineHeight,
     List<Shadow>? shadows,
-  }) =>
-      useGoogleFonts
-          ? GoogleFonts.getFont(
-              fontFamily!,
-              color: color ?? this.color,
-              fontSize: fontSize ?? this.fontSize,
-              letterSpacing: letterSpacing ?? this.letterSpacing,
-              fontWeight: fontWeight ?? this.fontWeight,
-              fontStyle: fontStyle ?? this.fontStyle,
-              decoration: decoration,
-              height: lineHeight,
-              shadows: shadows,
-            )
-          : copyWith(
-              fontFamily: fontFamily,
-              color: color,
-              fontSize: fontSize,
-              letterSpacing: letterSpacing,
-              fontWeight: fontWeight,
-              fontStyle: fontStyle,
-              decoration: decoration,
-              height: lineHeight,
-              shadows: shadows,
-            );
+    String? package,
+  }) {
+    if (useGoogleFonts && fontFamily != null) {
+      font = GoogleFonts.getFont(fontFamily,
+          fontWeight: fontWeight ?? this.fontWeight,
+          fontStyle: fontStyle ?? this.fontStyle);
+    }
+
+    return font != null
+        ? font.copyWith(
+            color: color ?? this.color,
+            fontSize: fontSize ?? this.fontSize,
+            letterSpacing: letterSpacing ?? this.letterSpacing,
+            fontWeight: fontWeight ?? this.fontWeight,
+            fontStyle: fontStyle ?? this.fontStyle,
+            decoration: decoration,
+            height: lineHeight,
+            shadows: shadows,
+          )
+        : copyWith(
+            fontFamily: fontFamily,
+            package: package,
+            color: color,
+            fontSize: fontSize,
+            letterSpacing: letterSpacing,
+            fontWeight: fontWeight,
+            fontStyle: fontStyle,
+            decoration: decoration,
+            height: lineHeight,
+            shadows: shadows,
+          );
+  }
 }

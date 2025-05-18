@@ -180,7 +180,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '4wn4ovkl': {
       'en': 'Copy',
       'es': 'Copiar',
-      'pt': 'Cópia',
+      'pt': 'Copiar',
     },
     's785woxq': {
       'en': 'CV',
